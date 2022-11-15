@@ -6,16 +6,23 @@ const lowOrHi = document.querySelector(".lowOrHi");
 // Main Function
 function checkGuess() {
   let guess = parseInt(document.getElementById("guessField").value);
-  const guessesRemaining = document.querySelector(".lastResult");
-  const guessSlot = document.querySelector(".guesses");
-
+  previousGuesses.push(guess)
+  document.getElementById("guessField").value=''
+  const guessesRemaining = document.querySelector(".lastResult").innerHTML=numberOfAttempts-1;
+  const guessSlot = document.querySelector(".guesses").innerHTML=previousGuesses;
+if (numberOfAttempts==0) {
+  alert("No remaining attempts")
+  location.reload()
+}
   if (guess === randomNumber) {
-    console.log("You guessed it correctly!");
-  } else if (guess > randomNumber) {
+    alert("You guessed it correctly!");
+    location.reload()
+  }
+   else if (guess > randomNumber) {
+     alert("You guessed it more!");
     numberOfAttempts--;
-    alert("You guessed it more!");
   } else {
+    alert("You guessed it less!");
     numberOfAttempts--;
-    console.log("You guessed it less!");
   }
 }
