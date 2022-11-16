@@ -1,5 +1,4 @@
 let previousBMIs = [];
-let randomNumber = Math.ceil(Math.random() * 100 + 1);
 
 // Main Function
 function checkGuess() {
