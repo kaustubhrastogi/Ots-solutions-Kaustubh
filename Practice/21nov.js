@@ -3,3 +3,11 @@ const API = async()=>{
     console.log(response)
   }
   API()
+
+// https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=lat&longitude=long&localityLanguage=en
+
+let Position = ()=>{
+  let location = navigator.geolocation.getCurrentPosition((e)=>console.log(e))
+  console.log(location)
+}
+Position()
