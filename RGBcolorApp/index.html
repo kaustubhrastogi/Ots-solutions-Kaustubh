@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <h1 style="text-align: center; color: crimson;">RGB Colour App</h1>
+    <br/>
+    <form>
+        <input type="range" id="red" name="red" min="0" max="255" onchange="change(event)" oninput="this.form.amountRed.value=this.value" />
+        <input type="number" name="amountRed" min="0" max="255" oninput="this.form.red.value=this.value" onchange="change(event)" />
+   
+        <input type="range" id="green" name="green" min="0" max="255" onchange="change(event)" oninput="this.form.amountGreen.value=this.value"  />
+        <input type="number" name="amountGreen" min="0" max="255" oninput="this.form.green.value=this.value"  />
+  
+        <input type="range" id="blue" name="blue" min="0" max="255" onchange="change(event)" oninput="this.form.amountBlue.value=this.value"  />
+        <input type="number" name="amountBlue" min="0" max="255" oninput="this.form.blue.value=this.value"  />
+    </form>
+    <div id="rgb">Colour Code</div>
+    
+</body>
+</html>
