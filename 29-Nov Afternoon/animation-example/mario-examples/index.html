@@ -5,33 +5,53 @@
 </head>
 <body>
   <style>
-    .cloud{
-      animation:moveCloud 10s infinite;
+    .cloud1{
+      animation:moveCloud1 10s infinite;
     }
+    @keyframes moveCloud1 {
+      0%{ width: 200px; color: coral;}
+      50%{transform: translate(400px); width: 300px; color: yellow;}
+      100%{transform: translate(20px, -50px); width: 300px; color: yellow;}
+    }
+    
     .lines{
-      animation:moveLine 5s infinite;
-    }
-    @keyframes moveCloud {
-      0%{top: 0px;  width: 100px;}
-      100%{top: 200px; width: 300px;}
+      animation:moveLine 10s infinite;
     }
     @keyframes moveLine {
-      0%{left: 200px; }
-      50%{left: 50px;}
-      100%{right:150px;}
+      0%{left: 100px; }
+      50%{left: 50px; transform: translateX(-50px);}
+      100%{right:50px;}
     }
     .mario{
       animation: drive 5s infinite;
     }
     @keyframes drive {
-      0%{transform: translateX(0px);}
-      25%{transform: translateX(200px) rotate(-30deg);}
-      50%{transform: translateY(-500px) rotate(-60deg);}
-      100%{transform: translateX(1000px);}
+      0%{transform: translate(0px);}
+      25%{transform: translate(200px, -100px) rotate(-30deg);}
+      50%{transform: translate(300px, -200px) rotate(-360deg);}
+      75%{transform: translateX(400px) rotate(-20deg);}
+      100%{transform: translate(800px);}
+    }
+    .grass{
+      animation: grassChange 10s infinite;
+    }
+    @keyframes grassChange {
+      0%{background-color: green;}
+      50%{background-color: yellowgreen;}
+      100%{background-color: rgb(206, 216, 68);}
+    }
+    .sun{
+      animation: Sun 10s;
+    }
+    @keyframes Sun {
+      0%{width: 100px;}
+      100%{width: 150px;}
     }
   </style>
   <div class="sky">
-    <img src="./img/cloud.png" class='cloud'alt="">
+    <img src="./img/sun.png" class='sun'alt="">
+    <img src="./img/cloud.png" class='cloud1'alt="" style="position: absolute">
+    <img src="./img/cloud.png" class='cloud2'alt="">
   </div>
   <div class="grass"></div>
   <div class="road">
