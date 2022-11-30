@@ -6,34 +6,41 @@
 <body>
   <style>
     .cloud1{
-      animation:moveCloud1 10s infinite;
+      animation:moveCloud1 15s infinite;
     }
     @keyframes moveCloud1 {
-      0%{ width: 200px; color: coral;}
-      50%{transform: translate(400px); width: 300px; color: yellow;}
-      100%{transform: translate(20px, -50px); width: 300px; color: yellow;}
+      0%{ width: 200px;}
+      50%{transform: translate(400px); width: 300px; }
+      100%{transform: translate(20px, -50px); width: 300px;}
+    }
+    .cloud2{
+      animation:moveCloud2 15s infinite;
+    }
+    @keyframes moveCloud2 {
+      0%{ transform: translate(200px,); width: 100px;}
+      50%{transform: translate(200px); width: 200px; }
+      100%{transform: translate(20px, -50px); width: 250px;}
     }
     
     .lines{
-      animation:moveLine 10s infinite;
+      animation:moveLine 5s infinite;
     }
     @keyframes moveLine {
-      0%{left: 100px; }
-      50%{left: 50px; transform: translateX(-50px);}
-      100%{right:50px;}
+      0%{transform: translateX(0px);}
+      50%{transform: translateX(-500px);}
+      100%{transform: translateX(-800px);}
     }
     .mario{
       animation: drive 5s infinite;
     }
     @keyframes drive {
       0%{transform: translate(0px);}
-      25%{transform: translate(200px, -100px) rotate(-30deg);}
-      50%{transform: translate(300px, -200px) rotate(-360deg);}
-      75%{transform: translateX(400px) rotate(-20deg);}
-      100%{transform: translate(800px);}
+      25%{transform: translate(200px, -200px) rotate(-45deg);}
+      50%{transform: translateX(400px) rotate(-30deg);}
+      100%{transform: translate(800px) rotate(30deg);}
     }
     .grass{
-      animation: grassChange 10s infinite;
+      animation: grassChange 5s infinite;
     }
     @keyframes grassChange {
       0%{background-color: green;}
@@ -41,7 +48,7 @@
       100%{background-color: rgb(206, 216, 68);}
     }
     .sun{
-      animation: Sun 10s;
+      animation: Sun 5s infinite;
     }
     @keyframes Sun {
       0%{width: 100px;}
@@ -49,9 +56,9 @@
     }
   </style>
   <div class="sky">
-    <img src="./img/sun.png" class='sun'alt="">
+    <img src="./img/sun.png" class='sun'alt="" style="position: absolute">
     <img src="./img/cloud.png" class='cloud1'alt="" style="position: absolute">
-    <img src="./img/cloud.png" class='cloud2'alt="">
+    <img src="./img/cloud.png" class='cloud2'alt="" style="position: absolute">
   </div>
   <div class="grass"></div>
   <div class="road">
