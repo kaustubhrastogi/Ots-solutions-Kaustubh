@@ -50,6 +50,7 @@ function App() {
   const [receipes, setReceipes] = useState([]);
   const[data,setData]=useState({})
   const[editData,setEditData]=useState(null)
+  const[Index,setIndex]=useState(null)
 
   const addReceipe = (receipe) => {
     
@@ -59,12 +60,25 @@ function App() {
     setData(item)
   }
   
-  const editFn=(item,index)=>{
-    const FilteredData = receipes.map((val)=>{
-      if(receipes[index]===item){
+  const updatedRecipe = (item)=> {
+    let newData=receipes.map((e)=>{
+      if(receipes[Index]===e){
         return {...item}
       }
-      return receipes;
+      return e
+    })
+    setReceipes(newData)
+  }
+
+  const editFn=(item,index)=>{
+    setIndex(index)
+    const FilteredData = receipes.filter((val)=>{
+      if(receipes[index]===item){
+        return true
+      }else{
+        return false
+      }
+      // return receipes;
       
     })
    setEditData(FilteredData[0])
@@ -73,7 +87,7 @@ function App() {
   }
   return (
     <div >
-      <FormComponent  addReceipe={addReceipe} editData={editData} />
+      <FormComponent  addReceipe={addReceipe} editData={editData} updatedRecipe={updatedRecipe}/>
       <List receipes={receipes} itemli={itemli} editFn={editFn}/>
       <Data data={data}/>
     </div>

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-const FormComponent = ({ addReceipe, editData }) => {
+const FormComponent = ({ addReceipe, editData, updatedRecipe }) => {
   const [update, setUpdate] = useState(false)
   const [details, setDetails] = useState({
     recipe: "",
@@ -37,8 +37,10 @@ const FormComponent = ({ addReceipe, editData }) => {
       });
     }
   };
+
   const handleUpdate = () =>{
-    addReceipe(details)
+    // addReceipe(details)
+    updatedRecipe(details)
     setUpdate(false)
   }
   // console.log(details);
