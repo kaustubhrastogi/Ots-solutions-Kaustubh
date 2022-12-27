@@ -1,5 +1,6 @@
 import React from "react";
-import { Table, Icon} from "semantic-ui-react";
+import { Table, Icon, Modal, Button } from "semantic-ui-react";
+import EditForm from "./EditForm";
 
 const TraineesList = (props) => (
   <>
@@ -25,8 +26,13 @@ const TraineesList = (props) => (
                   <Table.Cell>{trainee.email}</Table.Cell>
                   <Table.Cell>{trainee.gender}</Table.Cell>
                   <Table.Cell>
-                    <Icon name="edit" onClick = {()=> alert(trainee)} />
-                    <Icon name="user delete" onClick = {()=> props.deleteItems(index)} />
+                    <Modal
+                      trigger={<Icon name="edit"  />}
+                      header='Edit Details!'
+                      content={<EditForm trainee={trainee}/>}
+                      actions={['Cancel', { key: 'Update', content: 'Update', positive: true }]}
+                    />
+                    <Icon name="user delete" onClick={() => props.deleteItems(index)} />
                   </Table.Cell>
                 </Table.Row>
               </Table.Body>
