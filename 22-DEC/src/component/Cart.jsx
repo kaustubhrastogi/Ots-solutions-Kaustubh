@@ -17,11 +17,11 @@ const Cart = () => {
         <h1>Cart</h1>
         <div style={{display:'flex', flexWrap:'wrap', }}>
             {cartItem ? (
-                Object.values(cartItem).map((product, index)=>(
-                <div style={{height:'300px', width:'300px', border:'1px solid'}} key={product.id}>
-                    <div>{product.id}</div>
-                    <div>{product.name}</div>
-                    <div>{product.price}</div>
+                Object.keys(cartItem).map((product, index)=>(
+                <div style={{height:'300px', width:'300px', border:'1px solid'}} key={cartItem[product].id}>
+                    <div>{cartItem[product].id}</div>
+                    <div>{cartItem[product].name}</div>
+                    <div>{cartItem[product].price}</div>
                     <button onClick={()=>{dispatch(removeFromCart(index))}} >Remove from Cart</button>
                 </div>)
             )):<div>No data Found</div>}
